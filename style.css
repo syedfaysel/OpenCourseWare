@@ -43,7 +43,7 @@ body{
     align-items: center;
     justify-content: center;
 }
-iframe{
+#video-player{
     border-radius: 10px;
     width: 55vw;
     height: 400px;
@@ -62,10 +62,18 @@ iframe{
   text-align: center;
   color: white;
 }
-.playlist ol li{
+.playlist li button{
     padding: 5px 20px;
     margin: 2px;
-    background-color: aliceblue;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border: none;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+.playlist li button:hover{
+    font-weight: bold;
+    cursor: pointer;
 }
 
 
@@ -94,7 +102,7 @@ footer p{
     align-items: center;
     justify-content: center;
   }
-  iframe{
+  #video-player{
       width:95%;
       height: 360px;
   }
@@ -102,8 +110,8 @@ footer p{
 
 @media only screen and (max-width:680px){
 
-  iframe{
-    width: 95%;
+  #video-player{
+    width: 99%;
     height: 280px;
   }
 }

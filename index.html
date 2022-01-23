@@ -18,7 +18,7 @@
         </div>
         <div class="course-container">
             <div class="main-video">
-                <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLgH5QX0i9K3qzryglMjcyEktz4q7ySunX"
+                <iframe id="video-player" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLgH5QX0i9K3qzryglMjcyEktz4q7ySunX"
                     title="Course" frameborder="8"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -27,16 +27,15 @@
                     <div>
                         <h2>কোর্স সমূহ </h2>
                         <ul>
-                            <li>জাভাস্ক্রিপ্ট</li>
-                            <li> সি + + </li>
-                            <li>পাইথন </li>
-                            <li>ডাটা স্ট্রাকচার</li>
-                            <li>এলগরিদম</li>
-                            <li>অপারেটিং সিস্টেম</li>
-                            <li>কম্পিউটার নেটওয়ার্কিং</li>
-                            <li>বিচ্ছিন্ন গণিত </li>
+                            <li><button onclick="document.getElementById('video-player').src='https://www.youtube-nocookie.com/embed/videoseries?list=PLgH5QX0i9K3qzryglMjcyEktz4q7ySunX'">জাভাস্ক্রিপট </button></li>
+                            <li><button onclick="document.getElementById('video-player').src='https://www.youtube.com/embed/videoseries?list=PLu0W_9lII9agICnT8t4iYVSZ3eykIAOME'">পাইথন </button></li>
+                            <li><button onclick="document.getElementById('video-player').src='https://www.youtube-nocookie.com/embed/videoseries?list=PLgH5QX0i9K3q0ZKeXtF--CZ0PdH1sSbYL'">সি ++ </button></li>
+                            <li><button onclick="document.getElementById('video-player').src='https://www.youtube-nocookie.com/embed/videoseries?list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU'">ডাটা স্ট্রাকচার ও এলগরিদম </button></li>
+                            <li><button onclick="document.getElementById('video-player').src='https://www.youtube-nocookie.com/embed/videoseries?list=PLgH5QX0i9K3rYy9DVhk28m8enSo8xxiZ3'">বিচ্ছিন্ন গণিত  </button></li>
+                            <li><button onclick="document.getElementById('video-player').src=''">কম্পিউটার নেটওয়ার্কিং </button></li>
+                           
                         </ul>
-                    </div>
+                    </div> 
                 </div>
                 
             </div>
