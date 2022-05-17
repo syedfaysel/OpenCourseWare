@@ -9,13 +9,19 @@
   --brand-black: #202C2C;
   --brand-gray: #858585;
   --brand-lightblue: #8acbf0;
+  --brand-dark : #182020;
+}
+
+*{
+  text-decoration: none;
 }
 
 body{
     margin: auto;
     align-items: center;
     font-family: 'Poppins','Hind Siliguri', sans-serif;
-    background-color: rgb(22, 22, 23);
+    background-color: var(--brand-dark);
+    
 }
 ::selection{
   background-color: var(--brand-lightgreen);
@@ -49,13 +55,13 @@ body{
     border-radius: 10px;
     width: 55vw;
     height: 400px;
-    border-color: var(--brand-yellow);
+    border-color: var(--brand-black);
     
 }
 
 
 .playlist{
-    background-color: var(--brand-green);
+    background-color: var(--brand-black);
     border-radius: 10px;
     color: white;
     width: 300px;
@@ -83,7 +89,8 @@ body{
 footer p{
   text-align:center;
   font-size: 90%;
-  color: rgb(255, 255, 255); ;
+  color: rgb(255, 255, 255);
+  
 }
 
 .colored-text-1{
