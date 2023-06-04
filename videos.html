@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header>
+    <section>
         <div class="title">
             <h1>Opencourseware : <span class="colored-text-1">Free</span> Learning</h1>
         </div>
@@ -26,22 +26,38 @@
             <li><a href="/videos.html">Learning</a></li>
           </ul>
         </nav>
-    </header>
+        <div class="course-container">
+            <div class="main-video">
+                <iframe id="video-player"
+                    src="https://www.youtube-nocookie.com/embed/videoseries?list=PLvr0Ht-XkB_3NAwjutgaG0-62d2yjG6qz"
+                    title="Course" frameborder="8" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen  SameSite="Strict"></iframe>
+            </div>
+            <div class="courses">
+                <div class="playlist">
+                    <div>
+                        <h2>Tutorials</h2>
+                        <ul id="tutorials">
 
-    <main>
-      <h3 class="primary-text">Welcome To Opencourseware</h3>
-      <div>
-        <p>Continuously in progress. Meantime you can explore courses and learn from tutorials</p>
-        <p>Any feedback are appreciated. Connect with the ocw <span><a href="https://facebook.com/sfa.rajo">Editor</a> or request any feature <a href="https://m.me/sfa.rajo">here</a></span></p>
-      </div>
-    </main>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
 
     <footer>
         <p>Implemented by <a style="color: #FFB427" href="https://facebook.com/sfa.rajo">Syed Faysel Ahammad Rajo</a>
         </p>
         <p>&copy; 2021-2022</p>
     </footer>
-
+    <script type="module" src="index.js"></script>
+    <script>
+        var source = "https://www.youtube.com/embed/videoseries?list=";
+    </script>
 </body>
 
 </html>
