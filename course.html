@@ -9,13 +9,44 @@
     <title>Opencourseware</title>
     <link rel="icon" type="image/x-icon" href="favicon.svg">
     <!-- css  -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 
 
 </head>
 
+
+<style>
+
+
+
+  #course-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+  }
+  
+  .course-info-link{
+    display: flex;
+    justify-content: space-around;
+    margin:20px  0px;
+  }
+  .course-info-link a{
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 7px 15px;
+    color: var(--brand-green);
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      background-color: var(--brand-dark);
+    }
+  }
+
+</style>
+
 <body>
-    <header>
+    <section>
         <div class="title">
             <h1>Opencourseware : <span class="colored-text-1">Free</span> Learning</h1>
         </div>
@@ -27,26 +58,21 @@
             <li><a href="/OpenCourseWare/resources.html">Resources</a></li>
           </ul>
         </nav>
-    </header>
+        <div id="course-info">
+          
+            
+        </div>
 
-    <main>
-      <h2 class="primary-text">Resources on Collection...</h2>
-      <div class="drive">
-        <!-- <iframe src="https://drive.google.com/embeddedfolderview?id=1qGwpjmQIQO8rN1odas0njDSf72VRrTCa#grid" style="width:100%; height:600px; border:0;"></iframe>
-      </div> -->
-      <div style="text-align:justify">
-        <p>Website is Continuously in progress. Meantime you can explore courses and learn from tutorials.</p>
-        <br>
-        <br>
-        <p>Any feedback are appreciated. Connect with the ocw <span><a href="https://facebook.com/sfa.rajo">Editor</a> or request any feature <a href="https://m.me/sfa.rajo">here</a></span></p>
-      </div>
-    </main>
+    </section>
+
 
     <footer>
         <p>Implemented by <a style="color: #FFB427" href="https://facebook.com/sfa.rajo">Syed Faysel Ahammad Rajo</a>
         </p>
         <p>&copy; 2021-2022</p>
     </footer>
+    <script type="module" src="course-info.js"></script>
+    <script></script>
 
 </body>
 

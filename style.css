@@ -144,6 +144,13 @@ main{
 }
 
 
+footer{
+  margin-top: 30px;
+  margin-bottom: 0;
+  background-color: var(--brand-black);
+  padding: 10px;
+
+}
 
 footer p {
   text-align: center;

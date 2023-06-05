@@ -9,7 +9,10 @@ const options = {
   }
 };
 
-fetch("https://syedfaysel.github.io/json-api/ocw/courses.json", options)
+let url = "https://syedfaysel.github.io/json-api/ocw/courses.json";
+// url = "./assets/courses.json";
+
+fetch(url, options)
   .then(res => res.json())
   .then(data => {
     // console.log(data);
@@ -57,3 +60,4 @@ function CreateTutorialList(course) {
 
 
 
+// 
