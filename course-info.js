@@ -39,7 +39,8 @@ function showCourseDetails(course) {
   infoContent.innerHTML = `<h2>${course.title}</h2>
   <p>${course.courseCode}</p>
   <p>${course.credit} Credits</p>
-  <p>${course.instructor}</p>
+  <p>Prerequisites: ${course.prerequisite}</p>
+  <p>Course type: ${course.courseType}</p>
   <div class="course-info-link"><a href="./videos.html?id=${course.courseCode}">Tutorials</a>
   <a href="./resources.html?id=${course.ourseCode}">Resources</a></div>
   </div>`;
