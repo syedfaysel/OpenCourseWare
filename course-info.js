@@ -20,11 +20,11 @@ fetch("https://syedfaysel.github.io/json-api/ocw/courses.json")
 function getCourse(courses) {
   const params = new URLSearchParams(window.location.search);
   const query = params.get("id");
-  console.log(query);
+  // console.log(query);
   for (const course of courses) { 
     const courseCode = course.courseCode.toLowerCase();
     if (courseCode.toLowerCase() == query.toLowerCase()) {
-      console.log(course);
+      // console.log(course);
       return course;
     }
   }
