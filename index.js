@@ -27,7 +27,7 @@ function getCourse(courses) {
   for (const course of courses) { 
     const courseCode = course.courseCode.toLowerCase();
     if (courseCode == query.toLowerCase()) {
-      console.log(course);
+      // console.log(course);
       return course;
     }
   }
@@ -48,7 +48,7 @@ function CreateTutorialList(course) {
     
     let tutorialItem = document.createElement("li");
     tutorialItem.innerHTML = `<button class="btn"
-    onclick="${videoPlayer}.src='${tutorial.link}'">${tutorial.title.toUpperCase()}</button>`;
+    onclick="document.getElementById("video-player").src='${tutorial.link}'">${tutorial.title.toUpperCase()}</button>`;
     tutorialList.appendChild(tutorialItem);
   })
   
