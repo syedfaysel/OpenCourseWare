@@ -48,7 +48,7 @@ function CreateTutorialList(course) {
     
     let tutorialItem = document.createElement("li");
     tutorialItem.innerHTML = `<button class="btn"
-    onclick="document.getElementById('"video-player"').src='${tutorial.link}'">${tutorial.title.toUpperCase()}</button>`;
+    onclick="document.getElementById('video-player').src='${tutorial.link}'">${tutorial.title.toUpperCase()}</button>`;
     tutorialList.appendChild(tutorialItem);
   })
   
