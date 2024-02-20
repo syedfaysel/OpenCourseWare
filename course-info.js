@@ -1,6 +1,4 @@
 
-
-
 // const options = {
 //   method: "GET",
 //   headers: {
@@ -42,7 +40,7 @@ function showCourseDetails(course) {
   <p>Prerequisites: ${course.prerequisite}</p>
   <p>Course type: ${course.courseType}</p>
   <div class="course-info-link"><a href="./videos.html?id=${course.courseCode}">Tutorials</a>
-  <a href="./resources.html?id=${course.ourseCode}">Resources</a></div>
+  <a href="./resources.html?id=${course.courseCode}">Resources</a></div>
   </div>`;
 
 
