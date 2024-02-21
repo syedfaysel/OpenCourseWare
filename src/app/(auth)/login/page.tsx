@@ -2,21 +2,47 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {useState} from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function SignupPage() {
-
+export default function LoginPage() {
   const [user, setUser] = useState({
     email: "",
     password: "",
-    username: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const router = useRouter();
 
-  const onLogin = async () => { };
+  const onLogin = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.post("/api/user/login", user);
+      console.log("Login success", res.data);
+
+      if (res.status === 200) {
+        router.push("/dashboard");
+      }
+    } catch (error: any) {
+      console.log("login failed\n", error.response.data);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (user.email && user.password) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [user]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-center text-white text-2xl font-bold">Login</h1>
+      <h1 className="text-center text-white text-2xl font-bold">
+        {loading ? "Hold On! Cooking" : "Login"}
+      </h1>
       <hr />
       <div className="flex flex-col my-3">
         <label htmlFor="email">Email</label>
@@ -41,12 +67,15 @@ export default function SignupPage() {
         />
 
         <button
-          className="p-2 border border-gray-300 rounded-lg mb-4"
+          className={`p-2 border border-gray-300 rounded-lg mb-4 ${
+            buttonDisabled ? "bg-gray-500" : "bg-blue-500"
+          }`}
           onClick={onLogin}
+          disabled={buttonDisabled}
         >
           Login
         </button>
-        <Link href='/signup'>Visit signup page</Link>
+        <Link href="/signup">Visit signup page</Link>
       </div>
     </div>
   );

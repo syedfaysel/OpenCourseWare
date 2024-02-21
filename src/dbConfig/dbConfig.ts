@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 
-export async function dbConnect() {
+export default async function dbConnect() {
   try {
+    // console.log(process.env.MONGO_URL)
     await mongoose.connect(process.env.MONGO_URL!);
     const connection = mongoose.connection;
 
@@ -13,7 +14,6 @@ export async function dbConnect() {
       console.log("Mongoose connection error, make sure MongoDB is running", err);
       process.exit();
     })
-    console.log("Connected to DB");
   } catch (error) {
     console.log("Error in dbConnect: ", error);
   }

@@ -2,21 +2,49 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import toast from "react-hot-toast";
+import axios from "axios";
+
 
 export default function SignupPage() {
 
+  const router = useRouter();
   const [user, setUser] = useState({
     email: "",
     password: "",
     username: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const onSignup = async () => { };
+
+  const onSignup = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.post("/api/user/signup", user);
+      console.log("Signup success", res.data);
+      toast.success("Signup success");
+      router.push("/login")
+    } catch (error: any) {
+      console.log('Signup failed', error.message)
+      toast.error(error.message)
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if(user.email && user.password && user.username) {
+      setButtonDisabled(false)
+    } else {
+      setButtonDisabled(true)
+    }
+  }, [user])
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-center text-white text-2xl font-bold">Signup</h1>
+      <h1 className="text-center text-white text-2xl font-bold">{loading ? "Hold on! Cooking": "Signup"}</h1>
       <hr />
       <div className="flex flex-col my-3">
         <label htmlFor="username">Username</label>
@@ -51,8 +79,9 @@ export default function SignupPage() {
         />
 
         <button
-          className="p-2 border border-gray-300 rounded-lg mb-4"
+          className={`p-2 border border-gray-300 rounded-lg mb-4 ${buttonDisabled ? "bg-gray-500" : "bg-blue-500"}`}
           onClick={onSignup}
+          disabled={buttonDisabled}
         >
           Signup
         </button>
