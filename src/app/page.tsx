@@ -2,8 +2,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    <h1 className="text-3xl">Hello there, How's going on.. Everything seems to be fine</h1>
+    <main className="flex flex-col items-center justify-center py-2 min-h-screen">
+      <h1 className="text-3xl font-bold text-center p-6 lg:text-4xl">
+        Hello Folks! <br /> Welcome to <span className="text-yellow-500">ocw</span>X
+      </h1>
+      
     </main>
   );
 }

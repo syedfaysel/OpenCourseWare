@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
       password: hashedPassword,
     }).save();
 
-    console.log(newUser);
+    // console.log(newUser);
 
     return NextResponse.json(
       { message: "user created successfully" },

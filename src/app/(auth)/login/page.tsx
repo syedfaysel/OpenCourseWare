@@ -41,7 +41,7 @@ export default function LoginPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-center text-white text-2xl font-bold">
-        {loading ? "Hold On! Cooking" : "Login"}
+        {loading ? "Hold On! Cooking" : "Login | ocwX"}
       </h1>
       <hr />
       <div className="flex flex-col my-3">
@@ -75,7 +75,7 @@ export default function LoginPage() {
         >
           Login
         </button>
-        <Link href="/signup">Visit signup page</Link>
+        <Link href="/signup">Visit <span className="link text-yellow-400 underline">signup</span> page</Link>
       </div>
     </div>
   );
