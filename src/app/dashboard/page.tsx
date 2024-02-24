@@ -10,7 +10,7 @@ export default function Dashboard() {
   const router = useRouter();
   const logout = async () => {
     try {
-      const res = await axios.get(
+      const res = await axios.post(
         `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/user/logout`
       );
       toast.success("logout successful");
