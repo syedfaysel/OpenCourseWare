@@ -1,17 +1,22 @@
+import axios from 'axios';
 export async function GET(
   _request: Request,
-  {params}: {
+  {
+    params,
+  }: {
     params: {
       courseCode: string;
-    }
-  }) {
-  const res = await fetch(`https://syedfaysel.github.io/json-api/ocw/courses.json`);
+    };
+  }
+) {
+  const res = await axios.get(
+    `https://syedfaysel.github.io/json-api/ocw/courses.json`
+  );
+  console.log(res.data);
   // courses.map((c) => c.courseCode === params.courseCode)
-  
+
   return Response.json({
-    status: 200,
-    body: {
-      message: 'Hello from course API',
-    },
-  });
-}
+    message: "success",
+    data: res.data,
+  }, { status: 200 })};
+
