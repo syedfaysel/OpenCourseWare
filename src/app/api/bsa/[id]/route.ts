@@ -1,4 +1,5 @@
 import { promises as fs } from "fs";
+import axios from "axios";
 
 export async function GET(
   _request: Request,
@@ -12,12 +13,14 @@ export async function GET(
 ) {
   try {
     const id = params.id;
-    console.log(id);
-    const file = await fs.readFile(process.cwd() + "/src/_data.json", "utf8");
-    const data: any = JSON.parse(file);
-    // console.log(data);
+    // console.log(id);
+    // const file = await fs.readFile(process.cwd() + "/app/_data.json", "utf8");
+    // const data: any = JSON.parse(file);
 
-    const result = data.filter((s:any) => {
+    const res = await axios.get(`https://syedfaysel.github.io/json-api/bsa/reg24.json`);
+    // console.log(res.data);
+
+    const result = res.data.filter((s: any) => {
       return s.id == id;
     });
 
