@@ -17,7 +17,9 @@ export async function GET(
     // const file = await fs.readFile(process.cwd() + "/app/_data.json", "utf8");
     // const data: any = JSON.parse(file);
 
-    const res = await axios.get(`https://syedfaysel.github.io/json-api/bsa/reg24.json`);
+    const res = await axios.get(
+      `https://syedfaysel.github.io/json-api/bsa/reg24.json`
+    );
     // console.log(res.data);
 
     const result = res.data.filter((s: any) => {
