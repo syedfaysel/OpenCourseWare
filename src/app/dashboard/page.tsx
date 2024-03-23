@@ -21,7 +21,7 @@ export default function Dashboard() {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center  py-2">
       <h1 className="text-3xl font-bold">Dashboard</h1>
       <button
           className={`p-2 border border-gray-300 rounded-lg my-4 bg-blue-500
