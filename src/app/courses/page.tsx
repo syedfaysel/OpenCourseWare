@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import axios from "axios";
 import Search from "../components/Search";
+import { Suspense } from "react";
 
 const page = async () => {
   const res = await axios.get(
@@ -16,7 +17,9 @@ const page = async () => {
       <h1 className="text-center text-2xl font-bold text-green-300 mb-4">
         All courses
       </h1>
-      <Search courses={courses} />
+      <Suspense>
+        <Search courses={courses} />
+      </Suspense>
       {/* <div className="">
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-3 my-3 place-items-center p-3">
           {courses?.map((course: any) => {
