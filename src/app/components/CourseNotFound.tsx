@@ -11,7 +11,7 @@ const CourseNotFound = () => {
   }, 3000);
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center justify-center py-2 min_height'>
       <div>
         <MdErrorOutline className='text-yellow-400 text-3xl'></MdErrorOutline>
         <h1 className='text-2xl font-semibold text-yellow-400'>Oppps! No such course found

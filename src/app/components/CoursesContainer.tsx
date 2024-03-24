@@ -1,23 +1,14 @@
 
 import React from "react";
 import Link from "next/link";
-import axios from "axios";
-import Search from "../components/Search";
 
-const page = async () => {
-  const res = await axios.get(
-    "https://syedfaysel.github.io/json-api/ocw/courses.json"
-  );
-  const courses = res.data;
-  // console.log(courses)
+
+const CoursesContainer =  ({courses}: any) => {
+
 
   return (
     <>
-      <h1 className="text-center text-2xl font-bold text-green-300 mb-4">
-        All courses
-      </h1>
-      <Search courses={courses} />
-      {/* <div className="">
+      <div className="">
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-3 my-3 place-items-center p-3">
           {courses?.map((course: any) => {
             return (
@@ -32,9 +23,9 @@ const page = async () => {
             );
           })}
         </ul>
-      </div> */}
+      </div>
     </>
   );
 };
 
-export default page;
+export default CoursesContainer;

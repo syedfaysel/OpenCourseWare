@@ -13,7 +13,7 @@ const Videoplayer = ({ videos }: any) => {
   return (
     <div>
       {/* video player iframe */}
-      <div className="max-w-screen-lg mx-4 parent_wrapper z-[-1] rounded-md  shadow-lg shadow-yellow-300">
+      <div className="max-w-screen-lg mx-4 parent_wrapper rounded-md  shadow-lg shadow-yellow-300">
         <div className="wrapper rounded-md mt-8">
           
           <iframe

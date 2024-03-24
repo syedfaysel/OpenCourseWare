@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import {useEffect} from 'react';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -34,8 +35,26 @@ const Navbar = () => {
     // },
   ];
 
+
+    // Function to hide nav on resize
+  const handleResize = () => {
+    if (window.innerWidth >= 768) { // Assuming 768px is your md breakpoint
+        setNav(false);
+    }
+  };
+
+  // Set up event listener for window resize
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black nav z-10">
+    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black nav relative z-50">
       <div>
         {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
         <h1 className="text-4xl font-signature ml-2 font-bold">
@@ -64,11 +83,11 @@ const Navbar = () => {
       </div>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-600">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 z-100 w-full h-screen bg-gradient-to-b from-black to-gray-600">
           {links.map(({ id, link, title }) => (
             <li
               key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl text-blue-400 hover:text-yellow-400"
+              className="px-4 cursor-pointer capitalize py-6 text-2xl text-blue-400 hover:text-yellow-400"
             >
               <Link onClick={() => setNav(!nav)} href={link}>
                 {title}
