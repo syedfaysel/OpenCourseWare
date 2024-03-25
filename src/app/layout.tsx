@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         <div className="text-center mb-3 text-gray-400 text-sm">
           <p className="text-gray-400">&copy;All rights reserved <br /> <span className="text-blue-400">Syed Faysel Ahammad Rajo</span> </p>
         </div>
+        <Analytics />
       </body>
     </html>
   );
