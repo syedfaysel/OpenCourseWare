@@ -16,7 +16,7 @@ const Videoplayer = ({ videos }: any) => {
     <div>
       {/* video player iframe */}
       <div className="max-w-screen-lg mx-4 parent_wrapper rounded-md shadow-md shadow-yellow-300">
-        <div className="wrapper rounded-md mt-8">
+        <div className="wrapper rounded-md mt-8" id="player">
           <iframe
             className="rounded-xl"
             src={src}
@@ -47,6 +47,10 @@ const Videoplayer = ({ videos }: any) => {
                   className=" text-gray-100 font-bold bg-gray-600 px-3 py-2 rounded-lg hover:bg-red-600 transition ease-in-out duration-200"
                   onClick={() => {
                     setSrc(video.link);
+                    document.getElementById("player").scrollIntoView({
+                      block: "center",
+                      behavior: "smooth",
+                    });
                   }}
                 >
                   {"Play  "}
