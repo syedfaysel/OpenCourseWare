@@ -47,7 +47,7 @@ const Videoplayer = ({ videos }: any) => {
                   className=" text-gray-100 font-bold bg-gray-600 px-3 py-2 rounded-lg hover:bg-red-600 transition ease-in-out duration-200"
                   onClick={() => {
                     setSrc(video.link);
-                    document.getElementById("player").scrollIntoView({
+                    document.getElementById("player")!.scrollIntoView({
                       block: "center",
                       behavior: "smooth",
                     });
