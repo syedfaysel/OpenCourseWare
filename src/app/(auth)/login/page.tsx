@@ -21,14 +21,17 @@ export default function LoginPage() {
       console.log("Login success", res.data);
 
       if (res.status === 200) {
+        localStorage.setItem("user",JSON.stringify(res.data));
         router.push("/dashboard");
       }
     } catch (error: any) {
-      console.log("login failed\n", error.response.data);
+      console.log("login failed\n", error);
     } finally {
       setLoading(false);
     }
   };
+
+
 
   useEffect(() => {
     if (user.email && user.password) {
