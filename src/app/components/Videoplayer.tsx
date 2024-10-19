@@ -4,13 +4,12 @@ import { useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import convertVideoLink from "@/lib/convertVideoLink";
 
+
 const Videoplayer = ({ videos }: any) => {
+  const initialLink: any = convertVideoLink(videos[0].link);
+  const [src, setSrc] = useState(initialLink);
 
-
-  const [src, setSrc] = useState(videos[0].link);
-
-  const handleSrcClick = (link: string) => {
-    
+  const handleSrcClick = (link: any) => {
     setSrc(convertVideoLink(link));
   };
 
@@ -48,7 +47,8 @@ const Videoplayer = ({ videos }: any) => {
                 <button
                   className=" text-gray-100 font-bold bg-gray-600 px-3 py-2 rounded-lg hover:bg-red-600 transition ease-in-out duration-200"
                   onClick={() => {
-                    setSrc(video.link);
+                    // console.log(video.link);
+                    handleSrcClick(video.link);
                     document.getElementById("player")!.scrollIntoView({
                       block: "center",
                       behavior: "smooth",
