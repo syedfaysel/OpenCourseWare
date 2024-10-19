@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { FaPlay } from "react-icons/fa";
+import convertVideoLink from "@/lib/convertVideoLink";
 
 const Videoplayer = ({ videos }: any) => {
 
@@ -9,7 +10,8 @@ const Videoplayer = ({ videos }: any) => {
   const [src, setSrc] = useState(videos[0].link);
 
   const handleSrcClick = (link: string) => {
-    setSrc(link);
+    
+    setSrc(convertVideoLink(link));
   };
 
   return (
