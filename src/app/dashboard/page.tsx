@@ -4,15 +4,23 @@ import axios from "axios";
 import Link from "next/link";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { useState } from 'react';
+import { useState } from "react";
 import User from "@/models/userModel";
 
 export default function Dashboard() {
 
-  let user = localStorage.getItem("user");
-  user = (JSON.parse(user).user);
+  let user: any = "";
+
+  if (typeof window !== 'undefined' && window.localStorage) {
+    // Safe to use localStorage
+    user = localStorage.getItem("user");
+    if (user) {
+      user = JSON.parse(user).user;
+    }
+  }
+
   // console.log(user);
-  
+
   const router = useRouter();
   const logout = async () => {
     try {
@@ -44,12 +52,18 @@ export default function Dashboard() {
   );
 }
 
-const Profile = ({user}:any) => {
+const Profile = ({ user }: any) => {
   return (
     <div className="flex flex-col items-center bg-blue-300 rounded-lg p-3 m-3 text-black">
-      <h1>userId <span className="text-red-900">({user.id})</span> </h1>
-      <p>Email: <span className="text-red-900">({user.email})</span></p>
-      <p>Email: <span className="text-red-900">{user.username}</span></p>
+      <h1>
+        userId <span className="text-red-900">({user.id})</span>{" "}
+      </h1>
+      <p>
+        Email: <span className="text-red-900">({user.email})</span>
+      </p>
+      <p>
+        Email: <span className="text-red-900">{user.username}</span>
+      </p>
       <p>Your profile info here</p>
     </div>
   );
