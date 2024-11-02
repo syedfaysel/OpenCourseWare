@@ -29,8 +29,8 @@ const Videoplayer = ({ videos }: any) => {
 
       {/* tutorials */}
       <div className="flex flex-col items-center">
-        <h3 className="text-2xl font-bold text-yellow-300 mt-7">Tutorials</h3>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 my-3 place-items-center p-3">
+        <h3 className="text-2xl font-bold text-yellow-300 mt-7">All Tutorials</h3>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 my-3 items-center justify-center p-3">
           {videos.map((video: any) => {
             return (
               <div

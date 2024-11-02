@@ -38,12 +38,13 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="flex flex-col pt-2">
-          <div className="text-lg md:text-xl font-medium group-hover:text-sky-700 transition line-clamp-2 mb-6">
+          <div className="text-lg md:text-xl font-medium group-hover:text-sky-700 transition line-clamp-2 mb-6 text-green-500">
             {title}
           </div>
           <div className="my-3 flex items-center gap-x-2 text-sm md:text-md absolute bottom-0 left-3 right-0">
             <div className="flex items-center gap-x-1 text-gray-300">
-              {courseCategory}
+              <p className="text-lg font-bold text-yellow-500">{courseCode}</p>
+              <small>({courseCategory})</small>
             </div>
           </div>
         </div>
