@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
+import ThemeControl from "./components/ThemeControl";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +20,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} max-w-screen-xl`}>
+      <body>
         <Navbar />
-        <div className="min_height">
+        <div className="max-w-screen-xl mx-auto min-h-[69vh]">
           {children}
         </div>
         
-        <div className="text-center mb-3 text-gray-400 text-sm">
+        <footer>
+          <Footer/>
+        </footer>
+        {/* <div className="text-center mb-3 text-gray-400 text-sm">
           <p className="text-gray-400">&copy;All rights reserved <br /> <span className="text-blue-400">Syed Faysel Ahammad Rajo</span> </p>
-        </div>
+        </div> */}
         <Analytics />
       </body>
     </html>

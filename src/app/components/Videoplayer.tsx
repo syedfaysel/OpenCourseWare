@@ -14,12 +14,12 @@ const Videoplayer = ({ videos }: any) => {
   };
 
   return (
-    <div>
+    <div className="max-w-screen-lg mx-auto">
       {/* video player iframe */}
-      <div className="max-w-screen-lg mx-4 parent_wrapper rounded-md shadow-md shadow-yellow-300">
-        <div className="wrapper rounded-md mt-8" id="player">
+      <div className="mx-auto parent_wrapper">
+        <div className="wrapper mt-8" id="player">
           <iframe
-            className="rounded-xl"
+            className="w-full aspect-video"
             src={src}
             title="YouTube video player"
             allow="accelerometer; autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
