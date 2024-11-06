@@ -53,7 +53,7 @@ export default function Search({ courses }: Props) {
         {search && (
           <h1 className="text-xl my-2">
             Showing results for{" "}
-            <span className="text-yellow-400">"{search.toUpperCase()}"</span>
+            <span className="text-accent">"{search.toUpperCase()}"</span>
           </h1>
         )}
       </div>

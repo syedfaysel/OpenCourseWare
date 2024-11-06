@@ -14,7 +14,7 @@ const page = async () => {
 
   return (
     <>
-      <h1 className="text-center text-2xl font-bold text-green-300 mb-4">
+      <h1 className="text-center text-2xl font-bold text-accent my-4">
         All courses
       </h1>
       <Suspense>

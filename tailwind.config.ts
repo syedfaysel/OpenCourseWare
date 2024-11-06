@@ -21,7 +21,6 @@ const config: Config = {
     themes: [
       "light",
       "dark",
-      "cupcake",
       "bumblebee",
       "emerald",
       "corporate",

@@ -56,13 +56,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="bg-base-300">
+    <div className="bg-white  sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-10">
       <div className="flex justify-between items-center  w-full h-20 px-4 b nav relative z-50 max-w-screen-xl mx-auto">
         <div className="flex-1">
           {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
-          <h1 className="text-4xl font-signature ml-2 font-bold flex-inline">
+          <h1 className="text-4xl font-signature text-primary ml-2 font-bold flex-inline">
             <Link className="flex" href="/" rel="noreferrer">
-              <span className="text-yellow-500"><BsArrowUpRightCircleFill className="inline"/> ocw</span>X
+              <span className="text-accent"><BsArrowUpRightCircleFill className="inline"/> ocw</span>X
             </Link>
           </h1>
         </div>

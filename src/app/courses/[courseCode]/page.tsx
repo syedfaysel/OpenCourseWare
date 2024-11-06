@@ -29,9 +29,9 @@ const  CourseDetails = async ({
 
 
   return (
-    <div>
+    <div className='my-10'>
       {/* <h1>{(!course) ? `${error}`: `Single Course Page ${params.courseCode}`}</h1> */}
-      <h1 className='text-center font-bold text-xl lg:text-2xl'>You are learning <span className='text-green-500'>{course.title}</span></h1>
+      <h1 className='text-center font-bold text-xl lg:text-2xl'>You are learning <span className='text-accent'>{course.title}</span></h1>
       <Videoplayer videos={videos} />
     </div>
   )
