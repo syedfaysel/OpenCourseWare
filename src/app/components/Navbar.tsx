@@ -56,8 +56,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="bg-white  sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-10">
-      <div className="flex justify-between items-center  w-full h-20 px-4 b nav relative z-50 max-w-screen-xl mx-auto">
+    <div className="bg-base-300  sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-10">
+      <div className="flex justify-between items-center  w-full h-20 px-4 b nav relative max-w-screen-xl mx-auto">
         <div className="flex-1">
           {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
           <h1 className="text-4xl font-signature text-primary ml-2 font-bold flex-inline">
@@ -86,11 +86,11 @@ const Navbar = () => {
         </div>
 
         {nav && (
-          <ul className="flex flex-col justify-center items-center absolute top-0 left-0 z-100 w-full h-screen bg-gradient-to-b from-black to-gray-600">
+          <ul className="flex flex-col justify-start items-center absolute top-0 pt-10 left-0 z-100 w-full h-screen backdrop-filter backdrop-blur-lg bg-white bg-opacity-100 transform">
             {links.map(({ id, link, title }) => (
               <li
                 key={id}
-                className="px-4 cursor-pointer capitalize py-6 text-2xl text-blue-400 hover:text-yellow-400"
+                className="px-4 cursor-pointer capitalize py-4 text-2xl text-blue-400 hover:text-yellow-400"
               >
                 <Link onClick={() => setNav(!nav)} href={link}>
                   {title}

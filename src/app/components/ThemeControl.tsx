@@ -32,9 +32,9 @@ const ThemeControl = () => {
         tabIndex={0}
         className="dropdown-content bg-base-300 rounded-box z-[1] w-40 p-2 shadow-2xl md:-left-12"
       >
-        {themes.map((theme) => {
+        {themes.map((theme, index) => {
           return (
-            <li>
+            <li key={index}>
               <input
                 type="radio"
                 name="theme-dropdown"

@@ -46,7 +46,7 @@ export default function Search({ courses }: Props) {
         <input
           type="text"
           placeholder="Search by course code or title"
-          className="w-80 md:w-96 rounded-md border border-gray-400 py-[9px] px-3  text-gray-900 outline-2 placeholder:text-gray-500 value:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+          className="w-80 md:w-96 rounded-md border border-gray-400 py-[9px] px-3   outline-2 placeholder:text-gray-500 value:text-accent focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           onChange={(e) => handleSearch(e.target.value)}
           defaultValue={searchParams.get("search")?.toString()}
         />
